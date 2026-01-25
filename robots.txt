@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ai-da-stc.github.io/near-lab.github.io//sitemap.xml
+Sitemap: https://ai-da-stc.github.io/sitemap.xml
