@@ -18,7 +18,7 @@ function determineGiscusTheme() {
 
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
-    "data-repo": "AI-DA-STC/ai-da-stc.github.io",
+    "data-repo": "AI-DA-STC/near-lab.github.io",
     "data-repo-id": "",
     "data-category": "Comments",
     "data-category-id": "",
