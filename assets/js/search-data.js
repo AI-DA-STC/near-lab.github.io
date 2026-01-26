@@ -398,7 +398,7 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/near-lab.github.io/books/the_godfather/";
-            },},{id: "news-physical-ai-booth-at-st-engineering-innotech-conference-2025-cna-feature-business-times",
+            },},{id: "news-physical-ai-booth-at-st-engineering-innotech-conference-2025-cna-feature-business-times-josephine-teo",
           title: '🤖 Physical AI booth at ST Engineering InnoTech Conference 2025. CNA Feature ·...',
           description: "",
           section: "News",},{id: "news-robust-physical-ai-talk-by-william-at-dssg-google-developers-space-event-info-linkedin",
