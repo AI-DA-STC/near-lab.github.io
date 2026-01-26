@@ -3,8 +3,8 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-next-gen-edge-ai-robotics-near-lab",
-    title: "Next-gen Edge AI & Robotics (NEAR) Lab",
+    id: "nav-about",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "/near-lab.github.io/";
