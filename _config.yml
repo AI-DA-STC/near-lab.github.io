@@ -202,6 +202,11 @@ exclude:
   - package.json
   - package-lock.json
   - _pages/about_einstein.md
+  - _pages/william_bio.md
+  - _pages/shawn_bio.md
+  - _pages/roy_bio.md
+  - _pages/jiaying_bio.md
+  - _pages/krishna_bio.md
   - purgecss.config.js
   - README.md
   - readme_preview/
