@@ -1,16 +1,8 @@
 ---
 layout: about
-title: Next-gen Edge AI & Robotics (NEAR) Lab
+title: About
 permalink: /
-subtitle: <a href='#'>@AI.DA-STC, ST Engineering, Singapore</a>
-
-profile:
-  align: right
-  image: team_near.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Team NEAR @ST Engineering Seletar Digital Hub</p>
-    <p>600 W Camp Rd, Singapore 797654</p>
+subtitle: 
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -34,11 +26,41 @@ Our mission is to create intelligence that allows robots—such as drones and qu
 
 ### Research Focus
 
-Our R&D efforts span the following key areas:
+Our research focuses on **Robust Physical AI** for autonomous robotic systems operating in real-world, resource-constrained environments. We study the algorithmic and systems foundations that enable reliable perception, coordinated decision-making, and efficient on-device intelligence across heterogeneous robotic platforms, including UAVs, quadruped UGVs, and mobile manipulators.
 
-- **Embodied Vision-Language-Action (VLA) Models** – Developing behavior intelligence for physical AI systems
-- **Perception & Mapping** – Enabling robots to understand and navigate complex environments
-- **Swarm Communications & Networking** – Building robust mesh networks for multi-robot coordination
-- **Control & Locomotion** – Advancing mobility for both aerial (drones) and ground (quadruped) platforms
-- **Edge Computing & Embedded Systems** – Optimizing AI inference for resource-constrained hardware
-- **Simulation & Synthetic Data** – Creating sim-to-real pipelines for rapid algorithm development and validation
+Our work is organized around three core pillars:
+
+**1. Perception**
+
+We develop multi-modal, multi-robot perception systems that enable consistent world understanding across heterogeneous agents.
+
+Focus areas include:
+- Multi-sensor fusion (vision, depth, inertial, proprioception)
+- Distributed and collaborative SLAM
+- GPS-denied localization and mapping
+- Shared spatial and semantic representations
+- Semantic scene understanding for downstream planning and control
+- Edge-deployable perception pipelines
+
+**2. Coordination & Action**
+
+We study hierarchical decision-making and multi-robot coordination for translating high-level intent into robust physical behavior.
+
+Focus areas include:
+- Vision-Language-Action (VLA) models for intent grounding
+- Task and motion planning
+- Mission decomposition and hierarchical planning
+- Capability-aware task allocation in heterogeneous teams
+- Multi-robot coordination under partial observability and communication constraints
+- Closed-loop execution and adaptation in dynamic environments
+
+**3. Edge Intelligence**
+
+We design hardware-aware learning and inference systems for autonomous robots with strict power, thermal, and latency constraints.
+
+Focus areas include:
+- Model compression (distillation, pruning, quantization)
+- Hardware-aware neural architecture optimization
+- Embedded inference on Jetson and ARM-based platforms
+- Robust inference under noise, latency, and bandwidth constraints
+- AI–systems co-design for autonomy at the edge
