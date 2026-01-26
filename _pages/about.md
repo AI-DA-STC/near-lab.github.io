@@ -33,6 +33,7 @@ Our work is organized around three core pillars:
 We develop multi-modal, multi-robot perception systems that enable consistent world understanding across heterogeneous agents.
 
 Focus areas include:
+
 - Multi-sensor fusion (vision, depth, inertial, proprioception)
 - Distributed and collaborative SLAM
 - GPS-denied localization and mapping
@@ -45,6 +46,7 @@ Focus areas include:
 We study hierarchical decision-making and multi-robot coordination for translating high-level intent into robust physical behavior.
 
 Focus areas include:
+
 - Vision-Language-Action (VLA) models for intent grounding
 - Task and motion planning
 - Mission decomposition and hierarchical planning
@@ -57,6 +59,7 @@ Focus areas include:
 We design hardware-aware learning and inference systems for autonomous robots with strict power, thermal, and latency constraints.
 
 Focus areas include:
+
 - Model compression (distillation, pruning, quantization)
 - Hardware-aware neural architecture optimization
 - Embedded inference on Jetson and ARM-based platforms
