@@ -18,8 +18,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-<img src="{{ '/assets/img/near_lab.png' | relative_url }}" alt="NEAR Lab Logo" style="width: 100%; margin-bottom: 20px;">
-
 Hey there! Welcome to the **Next-gen Edge AI & Robotics (NEAR) Lab**. We are part of AI.DA-STC at ST Engineering, Singapore, working at the forefront of robotics and edge AI research.
 
 Our mission is to create intelligence that allows robots—such as drones and quadrupeds—to share perception and complete complex missions without human micromanagement or reliance on cloud connectivity. Everything we build runs entirely at the edge, making our systems critical for contested and communication-denied environments.
