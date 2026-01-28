@@ -14,6 +14,11 @@ profiles:
     more_info: >
       <p><strong>William Teo</strong></p>
       <p>Head of Team NEAR@AI.DA-STC</p>
+      <div class="social-icons">
+        <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
+        <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="https://www.linkedin.com/in/william-teo/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
 
   - align: left
     image: shawn.jpeg
@@ -22,6 +27,11 @@ profiles:
     more_info: >
       <p><strong>Shawn Soh</strong></p>
       <p>Principal AI Engineer</p>
+      <div class="social-icons">
+        <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
+        <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
 
   - align: right
     image: roy.png
@@ -30,6 +40,11 @@ profiles:
     more_info: >
       <p><strong>Dibyendu Roy</strong></p>
       <p>Principal AI Engineer</p>
+      <div class="social-icons">
+        <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
+        <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
 
   - align: left
     image: jiaying.jpeg
@@ -38,6 +53,11 @@ profiles:
     more_info: >
       <p><strong>Jiaying</strong></p>
       <p>Principal AI Engineer</p>
+      <div class="social-icons">
+        <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
+        <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
 
   - align: right
     image: krishna.png
@@ -46,7 +66,30 @@ profiles:
     more_info: >
       <p><strong>Krishna</strong></p>
       <p>Assistant Principal AI Engineer</p>
+      <div class="social-icons">
+        <a href="https://krishna22112023.github.io/" title="Website"><i class="fa-solid fa-globe"></i></a>
+        <a href="https://scholar.google.com/citations?hl=en&user=gHmg-iwAAAAJ&view_op=list_works&authuser=1&sortby=pubdate" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="https://www.linkedin.com/in/srikrishna-i-449a27143/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
 ---
+
+<style>
+.social-icons {
+  margin-top: 10px;
+}
+.social-icons a {
+  font-size: 1.2rem;
+  margin-right: 12px;
+  color: #6c757d;
+  transition: color 0.2s ease;
+}
+.social-icons a:hover {
+  color: #007bff;
+}
+.social-icons .ai {
+  font-size: 1.3rem;
+}
+</style>
 
 <div style="text-align: center; margin-bottom: 40px;">
   <img src="{{ '/assets/img/team_near.jpg' | relative_url }}" alt="Team NEAR" class="img-fluid rounded z-depth-1" style="max-width: 60%; margin-bottom: 15px;">
