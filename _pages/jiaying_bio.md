@@ -1,1 +1,3 @@
-pls fill in about your exact role
+Jiaying holds a PhD from Nanyang Technological University (NTU), specialising in autonomous robotics and intelligent systems. Her work focuses on swarm autonomy, drone systems, SLAM, and learning-based locomotion and whole-body control for advanced robotic platforms.
+
+She operates at the convergence of multi-agent intelligence, embodied AI, and real-world deployment, advancing robust and scalable autonomy in complex environments. Working closely with Institutes of Higher Learning (IHLs) and industry partners, she contributes to the translation of cutting-edge research into operational capabilities. Her interests lie in building resilient, field-ready robotic systems that bridge simulation, experimentation, and deployment at scale.

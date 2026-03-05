@@ -1,3 +1,3 @@
-William Teo is the Robotics AI Research Lead at AI.DA STC NEAR Lab, where he directs research in multi-robot systems and embodied AI applications. He is concurrently pursuing a PhD in Robotics at NUS MARMoT Lab, specialising in multi-agent robot learning.
+William leads and directs NEAR Lab (Next-gen Edge AI & Robotics) at ST Engineering, driving research and applications in multi-agent robotics. Concurrently, he is pursuing a PhD in the MARMoT Lab at NUS, supported by the EDB IPP-PhD scheme and supervised by Prof. Guillaume Sartoretti.
 
-His diverse academic background includes a Master of Science in Computer Science from Georgia Tech and a Master of Engineering in Supply Chain Management from MIT. Currently, he focuses on bridging academia and industry to make robots _Smarter Better Faster_.
+His research focuses on multi-robot cooperation and competition, embodied AI & robot learning, and efficient machine learning for robotics.

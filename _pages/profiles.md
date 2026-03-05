@@ -30,7 +30,7 @@ profiles:
       <div class="social-icons">
         <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
         <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-        <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/shawn-sze-liip-soh/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
       </div>
 
   - align: right
@@ -42,8 +42,8 @@ profiles:
       <p>Principal AI Engineer</p>
       <div class="social-icons">
         <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
-        <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-        <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=7wXXB3AAAAAJ&hl=en&oi=sra" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="https://www.linkedin.com/in/dibyendu-roy-phd-11bb6569/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
       </div>
 
   - align: left
@@ -56,7 +56,7 @@ profiles:
       <div class="social-icons">
         <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
         <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-        <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/jiaying-chen-33bb6510b/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
       </div>
 
   - align: right
