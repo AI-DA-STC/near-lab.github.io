@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include head.liquid %}
+    <style>
+      /* =====================================================
+         NEAR Lab Home Page Styles
+         ===================================================== */
+
+      /* ----- Hero ----- */
+      .near-hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        overflow: hidden;
+      }
+      .near-hero-bg {
+        position: absolute;
+        inset: 0;
+        /* PLACEHOLDER: swap this gradient for a <video> or <img> of robots in operation */
+        background: linear-gradient(135deg, #0d1117 0%, #0f1f35 45%, #132338 100%);
+        z-index: 0;
+      }
+      .near-hero-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.42);
+      }
+      .near-hero-placeholder-badge {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        background: rgba(255, 165, 0, 0.12);
+        border: 1px dashed rgba(255, 165, 0, 0.5);
+        color: rgba(255, 165, 0, 0.85);
+        font-size: 0.72rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 4px;
+        font-family: monospace;
+        z-index: 10;
+        pointer-events: none;
+      }
+      .near-hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 6rem 0 5rem;
+      }
+      .near-hero-eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+      .near-hero-title {
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+      }
+      .near-hero-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 560px;
+        line-height: 1.65;
+        margin-bottom: 2.75rem;
+      }
+      .near-hero-ctas {
+        display: flex;
+        gap: 0.85rem;
+        flex-wrap: wrap;
+      }
+      .near-hero-cta-primary {
+        background: #fff;
+        color: #0d1117;
+        font-weight: 700;
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: background 0.2s ease;
+        display: inline-block;
+      }
+      .near-hero-cta-primary:hover {
+        background: #e2e8f0;
+        color: #0d1117;
+        text-decoration: none;
+      }
+      .near-hero-cta-secondary {
+        border: 1.5px solid rgba(255, 255, 255, 0.32);
+        color: rgba(255, 255, 255, 0.82);
+        font-weight: 600;
+        padding: 0.8rem 1.75rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: border-color 0.2s ease, color 0.2s ease;
+        display: inline-block;
+      }
+      .near-hero-cta-secondary:hover {
+        border-color: rgba(255, 255, 255, 0.68);
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* ----- Common section styles ----- */
+      .near-section {
+        padding: 5rem 0;
+      }
+      .near-section-label {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #6c757d;
+        margin-bottom: 0.6rem;
+      }
+      .near-accent-line {
+        width: 2.5rem;
+        height: 3px;
+        background: #0066cc;
+        border-radius: 2px;
+        margin-bottom: 1.25rem;
+      }
+      .near-section-title {
+        font-size: 1.9rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.5rem;
+        color: var(--global-text-color);
+      }
+
+      /* ----- Mission ----- */
+      .near-mission {
+        border-top: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.08));
+        border-bottom: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.08));
+      }
+      .near-mission-text {
+        font-size: 1.12rem;
+        line-height: 1.78;
+        color: var(--global-text-color);
+        max-width: 780px;
+      }
+
+      /* ----- Research Pillars ----- */
+      .near-pillars {
+        background: var(--global-code-bg-color, #f8f9fa);
+      }
+      html[data-theme='dark'] .near-pillars {
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .near-pillars-image-wrap {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 2.75rem;
+        background: var(--global-bg-color);
+        border: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.08));
+        min-height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .near-pillars-image-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .near-pillars-img-placeholder {
+        text-align: center;
+        padding: 3rem 2rem;
+        color: #adb5bd;
+        width: 100%;
+      }
+      .near-pillars-img-placeholder p {
+        font-family: monospace;
+        font-size: 0.8rem;
+        margin: 0.5rem 0 0;
+      }
+      .near-pillar-card {
+        padding: 1.5rem 1.25rem 1rem;
+      }
+      .near-pillar-number {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+        color: #6c757d;
+        margin-bottom: 0.4rem;
+      }
+      .near-pillar-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.55rem;
+        color: var(--global-text-color);
+      }
+      .near-pillar-desc {
+        font-size: 0.88rem;
+        line-height: 1.62;
+        color: var(--global-text-color-light, #6c757d);
+        margin: 0;
+      }
+      .near-pillars-cta {
+        margin-top: 2.5rem;
+        text-align: center;
+      }
+
+      /* ----- Featured Work ----- */
+      .near-project-card {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.1));
+        height: 100%;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        background: var(--global-bg-color);
+        display: flex;
+        flex-direction: column;
+      }
+      .near-project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.11);
+      }
+      .near-project-thumb {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+      .near-project-thumb-placeholder {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--global-code-bg-color, #f6f8fa);
+        color: #adb5bd;
+        font-size: 0.78rem;
+        font-family: monospace;
+        border-bottom: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.07));
+        flex-shrink: 0;
+      }
+      .near-project-body {
+        padding: 1.25rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .near-project-tag {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #0066cc;
+        margin-bottom: 0.45rem;
+      }
+      .near-project-title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+        color: var(--global-text-color);
+        line-height: 1.35;
+        flex: 1;
+      }
+      .near-project-desc {
+        font-size: 0.86rem;
+        color: var(--global-text-color-light, #6c757d);
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      /* ----- Latest Posts ----- */
+      .near-posts {
+        border-top: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.08));
+      }
+      .near-post-card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.1));
+        height: 100%;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        background: var(--global-bg-color);
+        text-decoration: none;
+        color: inherit;
+      }
+      .near-post-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.11);
+        text-decoration: none;
+        color: inherit;
+      }
+      .near-post-thumb {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+        flex-shrink: 0;
+      }
+      .near-post-thumb-placeholder {
+        width: 100%;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--global-code-bg-color, #f0f4f8);
+        color: #adb5bd;
+        font-size: 0.75rem;
+        font-family: monospace;
+        flex-shrink: 0;
+      }
+      .near-post-body {
+        padding: 1.25rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .near-post-date {
+        font-size: 0.72rem;
+        color: #6c757d;
+        margin-bottom: 0.45rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .near-post-title {
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 0.4rem;
+        color: var(--global-text-color);
+        flex: 1;
+      }
+      .near-post-desc {
+        font-size: 0.84rem;
+        color: var(--global-text-color-light, #6c757d);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* ----- Section view-all links ----- */
+      .near-view-all {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #0066cc;
+        text-decoration: none;
+      }
+      .near-view-all:hover {
+        color: #0052a3;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    {% include header.liquid %}
+
+    <main role="main">
+
+      <!-- ================================================================
+           HERO SECTION
+           Replace .near-hero-bg with a <video> or <img> when media is ready.
+           ================================================================ -->
+      <section class="near-hero">
+        <!--
+          PLACEHOLDER — replace the div below with your robot operation media.
+
+          Video example:
+          <video autoplay muted loop playsinline
+                 style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+            <source src="{{ '/assets/video/hero.mp4' | relative_url }}" type="video/mp4">
+          </video>
+
+          Image example:
+          <img src="{{ '/assets/img/hero_robots.jpg' | relative_url }}" alt=""
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+        -->
+        <div class="near-hero-bg"></div>
+        <div class="near-hero-placeholder-badge">PLACEHOLDER: hero video / image</div>
+
+        <div class="container near-hero-content">
+          <div class="row">
+            <div class="col-lg-8 col-xl-7">
+              <p class="near-hero-eyebrow">NEAR Lab &middot; AI.DA-STC &middot; ST Engineering &middot; Singapore</p>
+              <h1 class="near-hero-title">
+                Building robust autonomy<br>for the physical world.
+              </h1>
+              <p class="near-hero-subtitle">
+                Physical AI research that runs on real hardware, in contested environments, without the cloud.
+              </p>
+              <div class="near-hero-ctas">
+                <a href="{{ '/research/' | relative_url }}" class="near-hero-cta-primary">Our Research</a>
+                <a href="{{ '/publications/' | relative_url }}" class="near-hero-cta-secondary">Publications</a>
+                <a href="{{ '/people/' | relative_url }}" class="near-hero-cta-secondary">Meet the Team</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           MISSION BLOCK
+           ================================================================ -->
+      <section class="near-section near-mission">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <p class="near-section-label">Mission</p>
+              <div class="near-accent-line"></div>
+              <p class="near-mission-text">
+                The NEAR Lab builds AI for robots that operate where failures are unacceptable. We develop perception,
+                coordination, and edge intelligence systems that run entirely at the edge &mdash; no cloud,
+                no micromanagement, no shortcuts.
+              </p>
+              <p class="near-mission-text mt-3">
+                Our systems span UAVs, quadruped UGVs, and mobile manipulators, deployed in GPS-denied and
+                communication-constrained environments. We are part of AI.DA-STC at ST Engineering, Singapore &mdash;
+                where serious research meets real operational constraints.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           RESEARCH PILLARS
+           Place your diagram at assets/img/research_pillars.png.
+           The three pillar descriptions below the image link to /research/.
+           ================================================================ -->
+      <section class="near-section near-pillars">
+        <div class="container">
+          <p class="near-section-label">Research</p>
+          <div class="near-accent-line"></div>
+          <h2 class="near-section-title">Three pillars of Robust Physical AI</h2>
+
+          <!-- Pillar diagram -->
+          <div class="near-pillars-image-wrap mt-4">
+            <!--
+              PLACEHOLDER: Add your research_pillars.png to assets/img/.
+              The onerror handler will show the placeholder block until the image is available.
+            -->
+            <img
+              src="{{ '/assets/img/research_pillars.png' | relative_url }}"
+              alt="NEAR Lab Research Pillars — Perception, Coordination & Action, Edge Intelligence"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              style="max-width: 920px; width: 100%;"
+            >
+            <div class="near-pillars-img-placeholder" style="display: none;">
+              <div style="font-size: 3rem; opacity: 0.3; margin-bottom: 0.75rem;">&#9881;</div>
+              <p>PLACEHOLDER &mdash; place research_pillars.png at assets/img/research_pillars.png</p>
+            </div>
+          </div>
+
+          <!-- Pillar descriptions -->
+          <div class="row">
+            <div class="col-md-4">
+              <div class="near-pillar-card">
+                <p class="near-pillar-number">Pillar 01</p>
+                <h3 class="near-pillar-name">Perception</h3>
+                <p class="near-pillar-desc">
+                  Multi-modal, multi-robot perception for consistent world understanding across heterogeneous agents &mdash;
+                  fusing vision, depth, inertial, and proprioceptive signals into edge-deployable spatial and semantic representations.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="near-pillar-card">
+                <p class="near-pillar-number">Pillar 02</p>
+                <h3 class="near-pillar-name">Coordination &amp; Action</h3>
+                <p class="near-pillar-desc">
+                  Hierarchical decision-making and multi-robot coordination for translating high-level intent into robust physical
+                  behavior under partial observability and communication constraints.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="near-pillar-card">
+                <p class="near-pillar-number">Pillar 03</p>
+                <h3 class="near-pillar-name">Edge Intelligence</h3>
+                <p class="near-pillar-desc">
+                  Hardware-aware learning and inference for robots with strict power, thermal, and latency budgets &mdash;
+                  from model compression to AI&ndash;systems co-design for on-device autonomy.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="near-pillars-cta">
+            <a href="{{ '/research/' | relative_url }}" class="btn btn-outline-primary" style="font-weight: 600; border-radius: 5px; padding: 0.75rem 2.5rem; font-size: 0.95rem;">
+              Explore Our Research &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           FEATURED WORK
+           Replace placeholder cards with real project data.
+           Each card: thumbnail (img or GIF), pillar tag, title, one-liner.
+           ================================================================ -->
+      <section class="near-section near-featured">
+        <div class="container">
+          <p class="near-section-label">Featured Work</p>
+          <div class="near-accent-line"></div>
+          <h2 class="near-section-title">Flagship projects</h2>
+
+          <div class="row g-4 mt-1">
+
+            <!-- Card 1 — PLACEHOLDER -->
+            <div class="col-sm-6 col-lg-3 d-flex">
+              <div class="near-project-card w-100">
+                <!-- PLACEHOLDER: replace with <img src="..." class="near-project-thumb" alt="..."> or a GIF -->
+                <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
+                <div class="near-project-body">
+                  <p class="near-project-tag">Perception</p>
+                  <h3 class="near-project-title">Project Title 1</h3>
+                  <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 — PLACEHOLDER -->
+            <div class="col-sm-6 col-lg-3 d-flex">
+              <div class="near-project-card w-100">
+                <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
+                <div class="near-project-body">
+                  <p class="near-project-tag">Coordination &amp; Action</p>
+                  <h3 class="near-project-title">Project Title 2</h3>
+                  <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 — PLACEHOLDER -->
+            <div class="col-sm-6 col-lg-3 d-flex">
+              <div class="near-project-card w-100">
+                <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
+                <div class="near-project-body">
+                  <p class="near-project-tag">Edge Intelligence</p>
+                  <h3 class="near-project-title">Project Title 3</h3>
+                  <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 — PLACEHOLDER -->
+            <div class="col-sm-6 col-lg-3 d-flex">
+              <div class="near-project-card w-100">
+                <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
+                <div class="near-project-body">
+                  <p class="near-project-tag">Systems</p>
+                  <h3 class="near-project-title">Project Title 4</h3>
+                  <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="text-center mt-4">
+            <a href="{{ '/projects/' | relative_url }}" class="near-view-all">View all projects &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           LATEST NEWS / BLOG
+           Pulls the 3 most recent posts. Add `thumbnail: /assets/img/...`
+           to a post's frontmatter to show a real image instead of the placeholder.
+           ================================================================ -->
+      <section class="near-section near-posts">
+        <div class="container">
+          <p class="near-section-label">Latest</p>
+          <div class="near-accent-line"></div>
+          <h2 class="near-section-title">News &amp; updates</h2>
+
+          <div class="row g-4 mt-1">
+            {% assign recent_posts = site.posts | limit: 3 %}
+            {% for post in recent_posts %}
+            <div class="col-md-4 d-flex">
+              <a href="{{ post.url | relative_url }}" class="near-post-card w-100">
+                {% if post.thumbnail %}
+                  <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="near-post-thumb">
+                {% else %}
+                  <!-- PLACEHOLDER: add thumbnail: /assets/img/... to this post's frontmatter -->
+                  <div class="near-post-thumb-placeholder">[ post thumbnail ]</div>
+                {% endif %}
+                <div class="near-post-body">
+                  <p class="near-post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                  <p class="near-post-title">{{ post.title }}</p>
+                  {% if post.description %}
+                    <p class="near-post-desc">{{ post.description }}</p>
+                  {% endif %}
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="text-center mt-4">
+            <a href="{{ '/blog/' | relative_url }}" class="near-view-all">View all posts &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    {% include footer.liquid %}
+    {% include scripts.liquid %}
+  </body>
+</html>

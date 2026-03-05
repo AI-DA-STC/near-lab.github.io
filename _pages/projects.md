@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: Research projects from NEAR Lab
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 <div class="coming-soon" style="text-align: center; padding: 60px 20px;">

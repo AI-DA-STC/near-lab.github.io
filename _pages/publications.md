@@ -4,7 +4,7 @@ permalink: /publications/
 title: publications
 description: Research publications from NEAR Lab
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 <div class="coming-soon" style="text-align: center; padding: 60px 20px;">
