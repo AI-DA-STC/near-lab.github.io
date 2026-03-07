@@ -397,6 +397,23 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+.navbar-center-label {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--global-text-color) !important;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
+}
+
 #light-toggle,
 #search-toggle {
   padding: 0;
