@@ -48,13 +48,6 @@
         z-index: 2;
         padding: 6rem 0 5rem;
       }
-      .near-hero-lab-name {
-        font-size: 0.82rem;
-        color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 1.25rem;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-      }
       .near-hero-title {
         font-size: clamp(2.4rem, 5vw, 4rem);
         font-weight: 800;
@@ -329,46 +322,6 @@
         line-height: 1.5;
       }
 
-      /* ----- News carousel controls ----- */
-      .near-news-controls {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-top: 2rem;
-        justify-content: center;
-      }
-      .near-news-nav-btn {
-        background: none;
-        border: 1.5px solid var(--global-divider-color, rgba(0, 0, 0, 0.2));
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        color: var(--global-text-color);
-        font-size: 1rem;
-        transition: background 0.2s ease, border-color 0.2s ease;
-        flex-shrink: 0;
-        padding: 0;
-      }
-      .near-news-nav-btn:hover:not(:disabled) {
-        background: var(--global-code-bg-color, rgba(0, 0, 0, 0.05));
-        border-color: var(--global-text-color);
-      }
-      .near-news-nav-btn:disabled {
-        opacity: 0.25;
-        cursor: default;
-      }
-      .near-news-counter {
-        font-size: 0.78rem;
-        color: #6c757d;
-        min-width: 3rem;
-        text-align: center;
-        font-weight: 500;
-      }
-
       /* ----- Section view-all links ----- */
       .near-view-all {
         font-size: 0.88rem;
@@ -412,7 +365,6 @@
         <div class="container near-hero-content">
           <div class="row">
             <div class="col-lg-8 col-xl-7">
-              <p class="near-hero-lab-name">Next-gen Edge AI &amp; Robotics (NEAR) Lab</p>
               <h1 class="near-hero-title">
                 Building robust autonomy<br>for the physical world.
               </h1>
@@ -572,8 +524,8 @@
 
       <!-- ================================================================
            NEWS SECTION
-           Shows all posts 3 at a time with prev/next navigation.
-           Add `thumbnail: /assets/img/...` to a post's frontmatter for a real image.
+           Shows the 3 most recent posts. Add `thumbnail: /assets/img/...`
+           to a post's frontmatter for a real image.
            ================================================================ -->
       <section class="near-section near-posts">
         <div class="container">
@@ -581,21 +533,21 @@
           <div class="near-accent-line"></div>
           <h2 class="near-section-title">Latest news &amp; updates</h2>
 
-          <div class="row g-4 mt-1" id="nearNewsRow">
-            {% for post in site.posts %}
-            <div class="col-md-4 d-flex near-post-item" data-post-index="{{ forloop.index0 }}">
-              <a href="{{ post.url | relative_url }}" class="near-post-card w-100">
-                {% if post.thumbnail %}
-                  <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="near-post-thumb">
+          <div class="row g-4 mt-1">
+            {% assign recent_news = site.news | sort: 'date' | reverse | limit: 3 %}
+            {% for item in recent_news %}
+            <div class="col-md-4 d-flex">
+              <a href="{{ item.url | relative_url }}" class="near-post-card w-100">
+                {% if item.thumbnail %}
+                  <img src="{{ item.thumbnail | relative_url }}" alt="{{ item.title }}" class="near-post-thumb">
                 {% else %}
-                  <!-- PLACEHOLDER: add thumbnail: /assets/img/... to this post's frontmatter -->
-                  <div class="near-post-thumb-placeholder">[ post thumbnail ]</div>
+                  <div class="near-post-thumb-placeholder">[ thumbnail ]</div>
                 {% endif %}
                 <div class="near-post-body">
-                  <p class="near-post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-                  <p class="near-post-title">{{ post.title }}</p>
-                  {% if post.description %}
-                    <p class="near-post-desc">{{ post.description }}</p>
+                  <p class="near-post-date">{{ item.date | date: "%B %d, %Y" }}</p>
+                  <p class="near-post-title">{{ item.title }}</p>
+                  {% if item.description %}
+                    <p class="near-post-desc">{{ item.description }}</p>
                   {% endif %}
                 </div>
               </a>
@@ -603,55 +555,11 @@
             {% endfor %}
           </div>
 
-          <!-- Prev / Next controls (hidden when ≤ 3 posts) -->
-          <div class="near-news-controls" id="nearNewsControls">
-            <button class="near-news-nav-btn" id="nearNewsPrev" onclick="nearNewsNav(-1)" aria-label="Previous" disabled>
-              &#8592;
-            </button>
-            <span class="near-news-counter" id="nearNewsCounter"></span>
-            <button class="near-news-nav-btn" id="nearNewsNext" onclick="nearNewsNav(1)" aria-label="Next">
-              &#8594;
-            </button>
-          </div>
-
-          <div class="text-center mt-3">
-            <a href="{{ '/blog/' | relative_url }}" class="near-view-all">View all news &rarr;</a>
+          <div class="text-center mt-4">
+            <a href="{{ '/news/' | relative_url }}" class="near-view-all">View all news &rarr;</a>
           </div>
         </div>
       </section>
-
-      <script>
-        (function () {
-          var items = document.querySelectorAll('.near-post-item');
-          var total = items.length;
-          var N = 3;
-          var cur = 0;
-
-          function update() {
-            items.forEach(function (el, i) {
-              el.style.display = (i >= cur && i < cur + N) ? 'flex' : 'none';
-            });
-            document.getElementById('nearNewsPrev').disabled = cur === 0;
-            document.getElementById('nearNewsNext').disabled = cur + N >= total;
-            if (total > N) {
-              var end = Math.min(cur + N, total);
-              document.getElementById('nearNewsCounter').textContent = (cur + 1) + '–' + end + ' / ' + total;
-            }
-          }
-
-          window.nearNewsNav = function (dir) {
-            cur = Math.max(0, Math.min(cur + dir * N, total - N));
-            update();
-          };
-
-          // Hide controls when all posts fit in one page
-          if (total <= N) {
-            document.getElementById('nearNewsControls').style.display = 'none';
-          }
-
-          update();
-        })();
-      </script>
 
     </main>
 

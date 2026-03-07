@@ -1,6 +1,8 @@
 ---
 layout: post
+title: "Robust Physical AI Talk at DSSG, Google Developers Space"
 date: 2026-01-13 19:00:00+0800
+thumbnail: assets/img/dssg.png
 inline: true
 related_posts: false
 ---

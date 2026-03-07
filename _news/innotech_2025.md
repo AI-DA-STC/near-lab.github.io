@@ -1,6 +1,8 @@
 ---
 layout: post
+title: "Physical AI Booth at ST Engineering InnoTech Conference 2025"
 date: 2025-09-04 17:00:00+0800
+thumbnail: assets/img/innotech.webp
 inline: true
 related_posts: false
 ---
