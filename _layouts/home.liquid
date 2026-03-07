@@ -16,37 +16,28 @@
         color: #fff;
         overflow: hidden;
       }
-      .near-hero-bg {
+      .near-hero-video {
         position: absolute;
         inset: 0;
-        /* PLACEHOLDER: swap this gradient for a <video> or <img> of robots in operation */
-        background: linear-gradient(135deg, #0d1117 0%, #0f1f35 45%, #132338 100%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         z-index: 0;
+        /* Dark fallback while video loads */
+        background: #0d1117;
       }
-      .near-hero-bg::after {
-        content: '';
+      .near-hero-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.42);
-      }
-      .near-hero-placeholder-badge {
-        position: absolute;
-        top: 1.25rem;
-        right: 1.25rem;
-        background: rgba(255, 165, 0, 0.12);
-        border: 1px dashed rgba(255, 165, 0, 0.5);
-        color: rgba(255, 165, 0, 0.85);
-        font-size: 0.72rem;
-        padding: 0.35rem 0.75rem;
-        border-radius: 4px;
-        font-family: monospace;
-        z-index: 10;
-        pointer-events: none;
+        background: rgba(0, 0, 0, 0.48);
+        z-index: 1;
       }
       .near-hero-content {
         position: relative;
         z-index: 2;
         padding: 6rem 0 5rem;
+        /* Ensure text renders clearly over video */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
       }
       .near-hero-title {
         font-size: clamp(2.4rem, 5vw, 4rem);
@@ -343,24 +334,12 @@
 
       <!-- ================================================================
            HERO SECTION
-           Replace .near-hero-bg with a <video> or <img> when media is ready.
            ================================================================ -->
       <section class="near-hero">
-        <!--
-          PLACEHOLDER — replace the div below with your robot operation media.
-
-          Video example:
-          <video autoplay muted loop playsinline
-                 style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-            <source src="{{ '/assets/video/hero.mp4' | relative_url }}" type="video/mp4">
-          </video>
-
-          Image example:
-          <img src="{{ '/assets/img/hero_robots.jpg' | relative_url }}" alt=""
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-        -->
-        <div class="near-hero-bg"></div>
-        <div class="near-hero-placeholder-badge">PLACEHOLDER: hero video / image</div>
+        <video class="near-hero-video" autoplay muted loop playsinline>
+          <source src="{{ '/assets/video/website hero.mp4' | relative_url }}" type="video/mp4">
+        </video>
+        <div class="near-hero-overlay"></div>
 
         <div class="container near-hero-content">
           <div class="row">
