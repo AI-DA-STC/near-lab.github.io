@@ -9,7 +9,14 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/near-lab.github.io/";
     },
-  },{id: "nav-publications",
+  },{id: "nav-research",
+          title: "Research",
+          description: "Robust Physical AI for autonomous robotic systems operating in real-world, resource-constrained environments.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/near-lab.github.io/research/";
+          },
+        },{id: "nav-publications",
           title: "publications",
           description: "Research publications from NEAR Lab",
           section: "Navigation",
