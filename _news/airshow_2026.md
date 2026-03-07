@@ -2,7 +2,7 @@
 layout: post
 title: "NEAR Lab at the Innovation Showcase, Singapore Airshow 2026"
 date: 2026-02-11 10:00:00+0800
-thumbnail: /assets/img/airshow_2026.jpg
+thumbnail: /assets/img/airshow_2026.jpeg
 inline: true
 related_posts: false
 ---
