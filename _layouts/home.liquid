@@ -48,13 +48,12 @@
         z-index: 2;
         padding: 6rem 0 5rem;
       }
-      .near-hero-eyebrow {
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.5);
-        margin-bottom: 1.5rem;
+      .near-hero-lab-name {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.55);
+        margin-bottom: 1.25rem;
         font-weight: 500;
+        letter-spacing: 0.02em;
       }
       .near-hero-title {
         font-size: clamp(2.4rem, 5vw, 4rem);
@@ -133,18 +132,6 @@
         letter-spacing: -0.02em;
         margin-bottom: 0.5rem;
         color: var(--global-text-color);
-      }
-
-      /* ----- Mission ----- */
-      .near-mission {
-        border-top: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.08));
-        border-bottom: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.08));
-      }
-      .near-mission-text {
-        font-size: 1.12rem;
-        line-height: 1.78;
-        color: var(--global-text-color);
-        max-width: 780px;
       }
 
       /* ----- Research Pillars ----- */
@@ -342,6 +329,46 @@
         line-height: 1.5;
       }
 
+      /* ----- News carousel controls ----- */
+      .near-news-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+        justify-content: center;
+      }
+      .near-news-nav-btn {
+        background: none;
+        border: 1.5px solid var(--global-divider-color, rgba(0, 0, 0, 0.2));
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--global-text-color);
+        font-size: 1rem;
+        transition: background 0.2s ease, border-color 0.2s ease;
+        flex-shrink: 0;
+        padding: 0;
+      }
+      .near-news-nav-btn:hover:not(:disabled) {
+        background: var(--global-code-bg-color, rgba(0, 0, 0, 0.05));
+        border-color: var(--global-text-color);
+      }
+      .near-news-nav-btn:disabled {
+        opacity: 0.25;
+        cursor: default;
+      }
+      .near-news-counter {
+        font-size: 0.78rem;
+        color: #6c757d;
+        min-width: 3rem;
+        text-align: center;
+        font-weight: 500;
+      }
+
       /* ----- Section view-all links ----- */
       .near-view-all {
         font-size: 0.88rem;
@@ -385,42 +412,18 @@
         <div class="container near-hero-content">
           <div class="row">
             <div class="col-lg-8 col-xl-7">
-              <p class="near-hero-eyebrow">NEAR Lab &middot; AI.DA-STC &middot; ST Engineering &middot; Singapore</p>
+              <p class="near-hero-lab-name">Next-gen Edge AI &amp; Robotics (NEAR) Lab</p>
               <h1 class="near-hero-title">
                 Building robust autonomy<br>for the physical world.
               </h1>
               <p class="near-hero-subtitle">
-                Physical AI research that runs on real hardware, in contested environments, without the cloud.
+                Advancing the algorithms and systems that enable robots to perceive, reason, and act reliably in real-world environments.
               </p>
               <div class="near-hero-ctas">
                 <a href="{{ '/research/' | relative_url }}" class="near-hero-cta-primary">Our Research</a>
                 <a href="{{ '/publications/' | relative_url }}" class="near-hero-cta-secondary">Publications</a>
                 <a href="{{ '/people/' | relative_url }}" class="near-hero-cta-secondary">Meet the Team</a>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================
-           MISSION BLOCK
-           ================================================================ -->
-      <section class="near-section near-mission">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-9">
-              <p class="near-section-label">Mission</p>
-              <div class="near-accent-line"></div>
-              <p class="near-mission-text">
-                The NEAR Lab builds AI for robots that operate where failures are unacceptable. We develop perception,
-                coordination, and edge intelligence systems that run entirely at the edge &mdash; no cloud,
-                no micromanagement, no shortcuts.
-              </p>
-              <p class="near-mission-text mt-3">
-                Our systems span UAVs, quadruped UGVs, and mobile manipulators, deployed in GPS-denied and
-                communication-constrained environments. We are part of AI.DA-STC at ST Engineering, Singapore &mdash;
-                where serious research meets real operational constraints.
-              </p>
             </div>
           </div>
         </div>
@@ -568,20 +571,19 @@
       </section>
 
       <!-- ================================================================
-           LATEST NEWS / BLOG
-           Pulls the 3 most recent posts. Add `thumbnail: /assets/img/...`
-           to a post's frontmatter to show a real image instead of the placeholder.
+           NEWS SECTION
+           Shows all posts 3 at a time with prev/next navigation.
+           Add `thumbnail: /assets/img/...` to a post's frontmatter for a real image.
            ================================================================ -->
       <section class="near-section near-posts">
         <div class="container">
-          <p class="near-section-label">Latest</p>
+          <p class="near-section-label">News</p>
           <div class="near-accent-line"></div>
-          <h2 class="near-section-title">News &amp; updates</h2>
+          <h2 class="near-section-title">Latest news &amp; updates</h2>
 
-          <div class="row g-4 mt-1">
-            {% assign recent_posts = site.posts | limit: 3 %}
-            {% for post in recent_posts %}
-            <div class="col-md-4 d-flex">
+          <div class="row g-4 mt-1" id="nearNewsRow">
+            {% for post in site.posts %}
+            <div class="col-md-4 d-flex near-post-item" data-post-index="{{ forloop.index0 }}">
               <a href="{{ post.url | relative_url }}" class="near-post-card w-100">
                 {% if post.thumbnail %}
                   <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="near-post-thumb">
@@ -601,11 +603,55 @@
             {% endfor %}
           </div>
 
-          <div class="text-center mt-4">
-            <a href="{{ '/blog/' | relative_url }}" class="near-view-all">View all posts &rarr;</a>
+          <!-- Prev / Next controls (hidden when ≤ 3 posts) -->
+          <div class="near-news-controls" id="nearNewsControls">
+            <button class="near-news-nav-btn" id="nearNewsPrev" onclick="nearNewsNav(-1)" aria-label="Previous" disabled>
+              &#8592;
+            </button>
+            <span class="near-news-counter" id="nearNewsCounter"></span>
+            <button class="near-news-nav-btn" id="nearNewsNext" onclick="nearNewsNav(1)" aria-label="Next">
+              &#8594;
+            </button>
+          </div>
+
+          <div class="text-center mt-3">
+            <a href="{{ '/blog/' | relative_url }}" class="near-view-all">View all news &rarr;</a>
           </div>
         </div>
       </section>
+
+      <script>
+        (function () {
+          var items = document.querySelectorAll('.near-post-item');
+          var total = items.length;
+          var N = 3;
+          var cur = 0;
+
+          function update() {
+            items.forEach(function (el, i) {
+              el.style.display = (i >= cur && i < cur + N) ? 'flex' : 'none';
+            });
+            document.getElementById('nearNewsPrev').disabled = cur === 0;
+            document.getElementById('nearNewsNext').disabled = cur + N >= total;
+            if (total > N) {
+              var end = Math.min(cur + N, total);
+              document.getElementById('nearNewsCounter').textContent = (cur + 1) + '–' + end + ' / ' + total;
+            }
+          }
+
+          window.nearNewsNav = function (dir) {
+            cur = Math.max(0, Math.min(cur + dir * N, total - N));
+            update();
+          };
+
+          // Hide controls when all posts fit in one page
+          if (total <= N) {
+            document.getElementById('nearNewsControls').style.display = 'none';
+          }
+
+          update();
+        })();
+      </script>
 
     </main>
 

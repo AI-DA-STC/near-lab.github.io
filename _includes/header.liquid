@@ -2,28 +2,14 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
-            {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
-          {% else %}
-            {{- site.title -}}
-          {% endif %}
-        </a>
-      {% elsif site.enable_navbar_social %}
-        <!-- Social Icons -->
-        <div class="navbar-brand social">{% social_links %}</div>
-      {% endif %}
+      <!-- Lab logos — shown on all pages -->
+      <a class="navbar-brand" href="{{ '/' | relative_url }}" style="display: flex; align-items: center; text-decoration: none; padding: 0;">
+        <span style="display: flex; align-items: center; gap: 0.55rem; background: #fff; border-radius: 6px; padding: 4px 10px;">
+          <img src="{{ '/assets/img/near_lab.png' | relative_url }}" alt="NEAR Lab" style="height: 32px; width: auto; display: block;">
+          <span style="width: 1px; height: 22px; background: rgba(0,0,0,0.15); display: block; flex-shrink: 0;"></span>
+          <img src="{{ '/assets/img/st-engineering.png' | relative_url }}" alt="ST Engineering" style="height: 22px; width: auto; display: block;">
+        </span>
+      </a>
       <!-- Navbar Toggle -->
       <button
         class="navbar-toggler collapsed ml-auto"
