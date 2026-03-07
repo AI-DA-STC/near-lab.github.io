@@ -155,6 +155,12 @@
       .near-pillar-card {
         padding: 1.5rem 1.25rem 1rem;
       }
+      .near-pillar-icon {
+        font-size: 2.2rem;
+        color: var(--global-theme-color, #0075ff);
+        display: block;
+        margin-bottom: 1rem;
+      }
       .near-pillar-number {
         font-size: 0.68rem;
         font-weight: 700;
@@ -371,28 +377,11 @@
           <div class="near-accent-line"></div>
           <h2 class="near-section-title">Three pillars of Robust Physical AI</h2>
 
-          <!-- Pillar diagram -->
-          <div class="near-pillars-image-wrap mt-4">
-            <!--
-              PLACEHOLDER: Add your research_pillars.png to assets/img/.
-              The onerror handler will show the placeholder block until the image is available.
-            -->
-            <img
-              src="{{ '/assets/img/research_pillars.png' | relative_url }}"
-              alt="NEAR Lab Research Pillars — Perception, Coordination & Action, Edge Intelligence"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              style="max-width: 920px; width: 100%;"
-            >
-            <div class="near-pillars-img-placeholder" style="display: none;">
-              <div style="font-size: 3rem; opacity: 0.3; margin-bottom: 0.75rem;">&#9881;</div>
-              <p>PLACEHOLDER &mdash; place research_pillars.png at assets/img/research_pillars.png</p>
-            </div>
-          </div>
-
           <!-- Pillar descriptions -->
-          <div class="row">
+          <div class="row mt-4">
             <div class="col-md-4">
               <div class="near-pillar-card">
+                <i class="ti ti-eye near-pillar-icon"></i>
                 <p class="near-pillar-number">Pillar 01</p>
                 <h3 class="near-pillar-name">Perception</h3>
                 <p class="near-pillar-desc">
@@ -403,6 +392,7 @@
             </div>
             <div class="col-md-4">
               <div class="near-pillar-card">
+                <i class="ti ti-topology-star-ring near-pillar-icon"></i>
                 <p class="near-pillar-number">Pillar 02</p>
                 <h3 class="near-pillar-name">Coordination &amp; Action</h3>
                 <p class="near-pillar-desc">
@@ -413,6 +403,7 @@
             </div>
             <div class="col-md-4">
               <div class="near-pillar-card">
+                <i class="ti ti-cpu near-pillar-icon"></i>
                 <p class="near-pillar-number">Pillar 03</p>
                 <h3 class="near-pillar-name">Edge Intelligence</h3>
                 <p class="near-pillar-desc">
