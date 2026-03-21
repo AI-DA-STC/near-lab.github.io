@@ -38,7 +38,7 @@ ninja.data = [{
             window.location.href = "/near-lab.github.io/people/";
           },
         },{id: "nav-news",
-          title: "News",
+          title: "news",
           description: "",
           section: "Navigation",
           handler: () => {
