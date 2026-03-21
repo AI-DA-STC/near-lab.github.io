@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /blog/
-title: News
+title: news
 nav: true
 nav_order: 6
 pagination:
