@@ -169,6 +169,9 @@ collections:
 # Jekyll settings
 # -----------------------------------------------------------------------------
 
+# Encoding
+encoding: utf-8
+
 # Markdown and syntax highlight
 markdown: kramdown
 highlighter: rouge

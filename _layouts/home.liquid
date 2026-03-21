@@ -7,6 +7,39 @@
          NEAR Lab Home Page Styles
          ===================================================== */
 
+      /* ----- Hero Lab Badge ----- */
+      .near-hero-lab-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        animation: nearFadeInUp 0.7s ease forwards 0.2s;
+      }
+      .near-hero-lab-logo {
+        height: 38px;
+        width: auto;
+        filter: brightness(0) invert(1);
+      }
+      .near-hero-lab-name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.85);
+        letter-spacing: 0.01em;
+        border-left: 1px solid rgba(255, 255, 255, 0.25);
+        padding-left: 0.75rem;
+      }
+
+      /* ----- Animations ----- */
+      @keyframes nearFadeInUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes nearFadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
       /* ----- Hero ----- */
       .near-hero {
         position: relative;
@@ -46,6 +79,8 @@
         letter-spacing: -0.03em;
         margin-bottom: 1.5rem;
         color: var(--global-theme-color);
+        opacity: 0;
+        animation: nearFadeInUp 0.7s ease forwards 0.35s;
       }
       .near-hero-subtitle {
         font-size: 1.2rem;
@@ -53,11 +88,15 @@
         max-width: 560px;
         line-height: 1.65;
         margin-bottom: 2.75rem;
+        opacity: 0;
+        animation: nearFadeInUp 0.7s ease forwards 0.5s;
       }
       .near-hero-ctas {
         display: flex;
         gap: 0.85rem;
         flex-wrap: wrap;
+        opacity: 0;
+        animation: nearFadeInUp 0.7s ease forwards 0.65s;
       }
       .near-hero-cta-primary {
         background: #fff;
@@ -107,7 +146,7 @@
       .near-accent-line {
         width: 2.5rem;
         height: 3px;
-        background: #0066cc;
+        background: var(--global-theme-color);
         border-radius: 2px;
         margin-bottom: 1.25rem;
       }
@@ -155,6 +194,13 @@
       }
       .near-pillar-card {
         padding: 1.5rem 1.25rem 1rem;
+        border-radius: 8px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      }
+      .near-pillar-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        background: var(--global-bg-color);
       }
       .near-pillar-icon {
         font-size: 2.2rem;
@@ -232,7 +278,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        color: #0066cc;
+        color: var(--global-theme-color);
         margin-bottom: 0.45rem;
       }
       .near-project-title {
@@ -324,11 +370,11 @@
       .near-view-all {
         font-size: 0.88rem;
         font-weight: 600;
-        color: #0066cc;
+        color: var(--global-theme-color);
         text-decoration: none;
       }
       .near-view-all:hover {
-        color: #0052a3;
+        color: var(--global-hover-color);
         text-decoration: underline;
       }
     </style>
@@ -344,13 +390,17 @@
            ================================================================ -->
       <section class="near-hero">
         <video class="near-hero-video" autoplay muted loop playsinline>
-          <source src="{{ '/assets/video/website hero.mp4' | relative_url }}" type="video/mp4">
+          <source src="{{ '/assets/video/website-hero-h264.mp4' | relative_url }}" type="video/mp4">
         </video>
         <div class="near-hero-overlay"></div>
 
         <div class="container near-hero-content">
           <div class="row">
             <div class="col-lg-8 col-xl-7">
+              <div class="near-hero-lab-badge">
+                <img src="{{ '/assets/img/near_lab.png' | relative_url }}" alt="NEAR Lab" class="near-hero-lab-logo">
+                <span class="near-hero-lab-name">Next-gen Edge AI &amp; Robotics (NEAR) Lab</span>
+              </div>
               <h1 class="near-hero-title">
                 Building robust autonomy<br>for the physical world.
               </h1>
