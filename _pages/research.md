@@ -532,6 +532,7 @@ nav_order: 1
 
     <!-- Focus area panel on the LEFT -->
     <div class="venn-panel" id="venn-panel"></div>
+
   </div>
 </div>
 
@@ -571,6 +572,7 @@ nav_order: 1
         <p class="related-work-pillar">Edge Intelligence</p>
       </div>
     </a>
+
   </div>
 </div>
 

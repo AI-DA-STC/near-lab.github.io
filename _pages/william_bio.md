@@ -1,3 +1,3 @@
-William leads and directs NEAR Lab (Next-gen Edge AI & Robotics) at ST Engineering, driving research and applications in multi-agent robotics. Concurrently, he is pursuing a PhD in the MARMoT Lab at NUS, supported by the EDB IPP-PhD scheme and supervised by Prof. Guillaume Sartoretti.
+I study how teams of robots learn to coordinate. My core work is strategy and skill learning for multi-robot systems. I work on the strategies teams form, the skills individual robots acquire, and the conditions under which that coordination holds or breaks. This connects to a broader interest in world-action models and how learned policies stay robust inside a team.
 
-His research focuses on multi-robot cooperation and competition, embodied AI & robot learning, and efficient machine learning for robotics.
+I lead NEAR Lab at AI.R STC, ST Engineering. I am also a PhD researcher at the MARMoT Lab at NUS, supervised by Guillaume Sartoretti. Before robotics I trained as a chartered accountant and studied supply chain management at MIT. That background shapes how I think about coordination as an operations problem.

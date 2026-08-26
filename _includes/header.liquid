@@ -3,10 +3,22 @@
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container" style="position: relative;">
       <!-- Left: logos only -->
-      <a class="navbar-brand" href="{{ '/' | relative_url }}" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none; padding: 0; flex-shrink: 0;">
-        <img src="{{ '/assets/img/near_lab.png' | relative_url }}" alt="NEAR Lab" style="height: 34px; width: auto; display: block; mix-blend-mode: multiply;">
+      <a
+        class="navbar-brand"
+        href="{{ '/' | relative_url }}"
+        style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none; padding: 0; flex-shrink: 0;"
+      >
+        <img
+          src="{{ '/assets/img/near_lab.png' | relative_url }}"
+          alt="NEAR Lab"
+          style="height: 34px; width: auto; display: block; mix-blend-mode: multiply;"
+        >
         <span style="width: 1px; height: 24px; background: rgba(128,128,128,0.25); display: block; flex-shrink: 0;"></span>
-        <img src="{{ '/assets/img/st-engineering.png' | relative_url }}" alt="ST Engineering" style="height: 24px; width: auto; display: block; mix-blend-mode: multiply;">
+        <img
+          src="{{ '/assets/img/st-engineering.png' | relative_url }}"
+          alt="ST Engineering"
+          style="height: 24px; width: auto; display: block; mix-blend-mode: multiply;"
+        >
       </a>
 
       <!-- Lab name removed from navbar — moved to hero section -->

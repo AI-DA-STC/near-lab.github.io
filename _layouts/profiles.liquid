@@ -1,7 +1,6 @@
 ---
 layout: page
 ---
-
 <div class="post">
   <article>
     {% if content and content != '' %}
@@ -9,7 +8,7 @@ layout: page
     {% endif %}
     {% if page.profiles %}
       {% for profile in page.profiles %}
-        <hr />
+        <hr>
         <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
           {% if profile.image %}
             {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
