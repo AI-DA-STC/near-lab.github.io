@@ -82,5 +82,3 @@ profiles:
   <img src="{{ '/assets/img/team_near.jpg' | relative_url }}" alt="Team NEAR" class="img-fluid rounded z-depth-1" style="max-width: 60%; margin-bottom: 15px;">
   <p style="color: #6c757d; font-style: italic;">Team NEAR members at Seletar Digital Hub, Singapore</p>
 </div>
-
-<hr style="margin-bottom: 30px;" />

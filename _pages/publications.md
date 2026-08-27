@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: publications
 description: Research publications from NEAR Lab
-nav: true
+nav: false
 nav_order: 3
 ---
 

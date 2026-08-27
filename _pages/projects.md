@@ -3,7 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: Research projects from NEAR Lab
-nav: true
+nav: false
 nav_order: 4
 ---
 

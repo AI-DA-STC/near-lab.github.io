@@ -430,7 +430,6 @@
               </p>
               <div class="near-hero-ctas">
                 <a href="{{ '/research/' | relative_url }}" class="near-hero-cta-primary">Our Research</a>
-                <a href="{{ '/publications/' | relative_url }}" class="near-hero-cta-secondary">Publications</a>
                 <a href="{{ '/people/' | relative_url }}" class="near-hero-cta-secondary">Meet the Team</a>
               </div>
             </div>
@@ -507,68 +506,74 @@
         Each card: thumbnail (img or GIF), pillar tag, title, one-liner.
         ================================================================
       -->
-      <section class="near-section near-featured">
-        <div class="container">
-          <p class="near-section-label">Featured Work</p>
-          <div class="near-accent-line"></div>
-          <h2 class="near-section-title">Flagship projects</h2>
+      {% comment %}
+        Flagship projects: hidden until the placeholder cards are replaced with
+        real projects. Unwrap this comment to bring the section back.
+      {% endcomment %}
+      {% comment %}
+        <section class="near-section near-featured">
+          <div class="container">
+            <p class="near-section-label">Featured Work</p>
+            <div class="near-accent-line"></div>
+            <h2 class="near-section-title">Flagship projects</h2>
 
-          <div class="row g-4 mt-1">
-            <!-- Card 1 — PLACEHOLDER -->
-            <div class="col-sm-6 col-lg-3 d-flex">
-              <div class="near-project-card w-100">
-                <!-- PLACEHOLDER: replace with <img src="..." class="near-project-thumb" alt="..."> or a GIF -->
-                <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
-                <div class="near-project-body">
-                  <p class="near-project-tag">Perception</p>
-                  <h3 class="near-project-title">Project Title 1</h3>
-                  <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+            <div class="row g-4 mt-1">
+              <!-- Card 1 — PLACEHOLDER -->
+              <div class="col-sm-6 col-lg-3 d-flex">
+                <div class="near-project-card w-100">
+                  <!-- PLACEHOLDER: replace with <img src="..." class="near-project-thumb" alt="..."> or a GIF -->
+                  <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
+                  <div class="near-project-body">
+                    <p class="near-project-tag">Perception</p>
+                    <h3 class="near-project-title">Project Title 1</h3>
+                    <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 — PLACEHOLDER -->
+              <div class="col-sm-6 col-lg-3 d-flex">
+                <div class="near-project-card w-100">
+                  <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
+                  <div class="near-project-body">
+                    <p class="near-project-tag">Coordination &amp; Action</p>
+                    <h3 class="near-project-title">Project Title 2</h3>
+                    <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 — PLACEHOLDER -->
+              <div class="col-sm-6 col-lg-3 d-flex">
+                <div class="near-project-card w-100">
+                  <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
+                  <div class="near-project-body">
+                    <p class="near-project-tag">Edge Intelligence</p>
+                    <h3 class="near-project-title">Project Title 3</h3>
+                    <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 — PLACEHOLDER -->
+              <div class="col-sm-6 col-lg-3 d-flex">
+                <div class="near-project-card w-100">
+                  <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
+                  <div class="near-project-body">
+                    <p class="near-project-tag">Systems</p>
+                    <h3 class="near-project-title">Project Title 4</h3>
+                    <p class="near-project-desc">One-line description of what was built and why it matters.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Card 2 — PLACEHOLDER -->
-            <div class="col-sm-6 col-lg-3 d-flex">
-              <div class="near-project-card w-100">
-                <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
-                <div class="near-project-body">
-                  <p class="near-project-tag">Coordination &amp; Action</p>
-                  <h3 class="near-project-title">Project Title 2</h3>
-                  <p class="near-project-desc">One-line description of what was built and why it matters.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3 — PLACEHOLDER -->
-            <div class="col-sm-6 col-lg-3 d-flex">
-              <div class="near-project-card w-100">
-                <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
-                <div class="near-project-body">
-                  <p class="near-project-tag">Edge Intelligence</p>
-                  <h3 class="near-project-title">Project Title 3</h3>
-                  <p class="near-project-desc">One-line description of what was built and why it matters.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 4 — PLACEHOLDER -->
-            <div class="col-sm-6 col-lg-3 d-flex">
-              <div class="near-project-card w-100">
-                <div class="near-project-thumb-placeholder">[ thumbnail / GIF ]</div>
-                <div class="near-project-body">
-                  <p class="near-project-tag">Systems</p>
-                  <h3 class="near-project-title">Project Title 4</h3>
-                  <p class="near-project-desc">One-line description of what was built and why it matters.</p>
-                </div>
-              </div>
+            <div class="text-center mt-4">
+              <a href="{{ '/projects/' | relative_url }}" class="near-view-all">View all projects &rarr;</a>
             </div>
           </div>
-
-          <div class="text-center mt-4">
-            <a href="{{ '/projects/' | relative_url }}" class="near-view-all">View all projects &rarr;</a>
-          </div>
-        </div>
-      </section>
+        </section>
+      {% endcomment %}
 
       <!--
         ================================================================
