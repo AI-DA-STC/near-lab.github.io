@@ -13,7 +13,7 @@ profiles:
     image_circular: false
     more_info: >
       <p><strong>William Teo</strong></p>
-      <p>Head of Team NEAR@AI.R STC</p>
+      <p>Lab Director</p>
       <div class="social-icons">
         <a href="https://www.william-teo.com" title="Website"><i class="fa-solid fa-globe"></i></a>
         <a href="https://scholar.google.com/citations?user=kgn0kGkAAAAJ&hl=en" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
@@ -73,9 +73,37 @@ profiles:
 .social-icons .ai {
   font-size: 1.3rem;
 }
+/* The rule before each profile clears the previous one's portrait, which floats
+   to the opposite side. Clearing the float itself is not enough: that moves the
+   float down but leaves the bio after it starting alongside the old float, so
+   the bio ends up squeezed between the two. */
+.post article hr {
+  clear: both;
+}
+/* Keep the bio in a single column beside the portrait. Without a block
+   formatting context it wraps around the float instead: list markers land on
+   top of the photo, and any text longer than the image runs full width
+   underneath it, breaking the left edge. */
+.profile-bio {
+  display: flow-root;
+}
+/* al-folio sets these inline-block, so a short role sits on the same line as
+   the name and only longer ones appear stacked. Always give the role its own
+   line. Needs to outrank `.profile .more-info p` in _base.scss. */
+.post article .profile .more-info p {
+  display: block;
+}
+.profile-bio ol,
+.profile-bio ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.profile-bio li {
+  margin-bottom: 0.5rem;
+}
 </style>
 
 <div style="text-align: center; margin-bottom: 40px;">
-  <img src="{{ '/assets/img/team_near.jpg' | relative_url }}" alt="Team NEAR" class="img-fluid rounded z-depth-1" style="max-width: 60%; margin-bottom: 15px;">
-  <p style="color: #6c757d; font-style: italic;">Team NEAR members at Seletar Digital Hub, Singapore</p>
+  <img src="{{ '/assets/img/team_near.jpg' | relative_url }}" alt="NEAR Lab team members" class="img-fluid rounded z-depth-1" style="max-width: 60%; margin-bottom: 15px;">
+  <p style="color: #6c757d; font-style: italic;">Members of NEAR Lab at Seletar Digital Hub, Singapore</p>
 </div>

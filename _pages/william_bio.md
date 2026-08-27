@@ -1,3 +1,3 @@
 I study how teams of robots learn to coordinate. My core work is strategy and skill learning for multi-robot systems. I work on the strategies teams form, the skills individual robots acquire, and the conditions under which that coordination holds or breaks. This connects to a broader interest in world-action models and how learned policies stay robust inside a team.
 
-I lead NEAR Lab at AI.R STC, ST Engineering. I am also a PhD researcher at the MARMoT Lab at NUS, supervised by Guillaume Sartoretti. Before robotics I trained as a chartered accountant and studied supply chain management at MIT. That background shapes how I think about coordination as an operations problem.
+I am also a PhD researcher at the MARMoT Lab at NUS, supervised by Guillaume Sartoretti. Before robotics I trained as a chartered accountant and studied supply chain management at MIT. That background shapes how I think about coordination as an operations problem.

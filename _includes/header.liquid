@@ -1,5 +1,24 @@
 <header>
   <style>
+    .navbar-logos {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .navbar-logos a {
+      display: block;
+      text-decoration: none;
+      line-height: 0;
+    }
+    .navbar-logo-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(128, 128, 128, 0.25);
+      display: block;
+      flex-shrink: 0;
+    }
     .navbar-logo {
       width: auto;
       display: block;
@@ -20,16 +39,16 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container" style="position: relative;">
-      <!-- Left: logos only -->
-      <a
-        class="navbar-brand"
-        href="{{ '/' | relative_url }}"
-        style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none; padding: 0; flex-shrink: 0;"
-      >
-        <img src="{{ '/assets/img/near_lab.png' | relative_url }}" alt="NEAR Lab" class="navbar-logo navbar-logo-near">
-        <span style="width: 1px; height: 24px; background: rgba(128,128,128,0.25); display: block; flex-shrink: 0;"></span>
-        <img src="{{ '/assets/img/st-engineering.png' | relative_url }}" alt="ST Engineering" class="navbar-logo navbar-logo-ste">
-      </a>
+      <!-- Left: logos only. Each links to the org it stands for. -->
+      <div class="navbar-brand navbar-logos">
+        <a href="{{ '/' | relative_url }}" aria-label="NEAR Lab home">
+          <img src="{{ '/assets/img/near_lab.png' | relative_url }}" alt="NEAR Lab" class="navbar-logo navbar-logo-near">
+        </a>
+        <span class="navbar-logo-divider"></span>
+        <a href="https://www.stengg.com" target="_blank" rel="noopener" aria-label="ST Engineering corporate site">
+          <img src="{{ '/assets/img/st-engineering.png' | relative_url }}" alt="ST Engineering" class="navbar-logo navbar-logo-ste">
+        </a>
+      </div>
 
       <!-- Lab name removed from navbar — moved to hero section -->
       <!-- Navbar Toggle -->

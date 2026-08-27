@@ -8,13 +8,24 @@ nav_order: 1
 ---
 
 <style>
+  /* Type scale for this page. The section previously used 16 ad-hoc sizes
+     between 0.58rem and 1.35rem; these are the steps they collapse onto. */
+  :root {
+    --rs-2xs: 0.7rem;
+    --rs-xs: 0.8rem;
+    --rs-sm: 0.9rem;
+    --rs-base: 1rem;
+    --rs-lg: 1.15rem;
+    --rs-xl: 1.35rem;
+  }
+
   /* ===== Research intro ===== */
   .research-intro {
     max-width: 760px;
     margin-bottom: 3rem;
   }
   .research-intro p {
-    font-size: 1.12rem;
+    font-size: var(--rs-lg);
     line-height: 1.78;
     color: var(--global-text-color);
   }
@@ -59,13 +70,13 @@ nav_order: 1
     z-index: 1;
   }
   .venn-header h3 {
-    font-size: 1.35rem;
+    font-size: var(--rs-xl);
     font-weight: 700;
     letter-spacing: -0.01em;
     margin-bottom: 0.2rem;
   }
   .venn-header p {
-    font-size: 0.85rem;
+    font-size: var(--rs-sm);
     color: var(--global-text-color-light);
     margin: 0;
   }
@@ -81,7 +92,11 @@ nav_order: 1
   }
   .venn-svg-wrap {
     flex: 1 1 auto;
-    max-width: 480px;
+    /* Without an explicit width this shrink-to-fits once .venn-body stacks,
+       and an SVG's default intrinsic width is 300px — so the diagram rendered
+       at half scale and its labels became unreadable. */
+    width: 100%;
+    max-width: 600px;
   }
   .venn-svg {
     width: 100%;
@@ -117,14 +132,14 @@ nav_order: 1
 
   /* Circle labels */
   .venn-label {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
     fill: var(--global-text-color);
     pointer-events: none;
     transition: opacity 0.35s ease;
   }
   .venn-label-sub {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -133,13 +148,13 @@ nav_order: 1
     transition: opacity 0.35s ease;
   }
   .venn-center-label {
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 800;
     fill: var(--global-theme-color);
     pointer-events: none;
   }
   .venn-center-sub {
-    font-size: 9.5px;
+    font-size: 11px;
     font-weight: 600;
     fill: var(--global-text-color-light);
     pointer-events: none;
@@ -148,7 +163,7 @@ nav_order: 1
   /* Instruction text */
   .venn-hint {
     text-align: center;
-    font-size: 0.75rem;
+    font-size: var(--rs-xs);
     color: var(--global-text-color-light);
     margin-top: 0.75rem;
     opacity: 0.7;
@@ -183,12 +198,12 @@ nav_order: 1
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1rem;
+    font-size: var(--rs-base);
     font-weight: 700;
     margin-bottom: 0.75rem;
     color: var(--global-text-color);
   }
-  .venn-panel-title i { color: var(--global-theme-color); font-size: 1.2rem; }
+  .venn-panel-title i { color: var(--global-theme-color); font-size: var(--rs-lg); }
   .venn-panel-chips {
     display: flex;
     flex-wrap: wrap;
@@ -198,7 +213,7 @@ nav_order: 1
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    font-size: 0.8rem;
+    font-size: var(--rs-xs);
     font-weight: 500;
     padding: 0.4rem 0.75rem;
     border-radius: 6px;
@@ -222,7 +237,7 @@ nav_order: 1
     color: #fff;
   }
   .venn-chip.chip-active i { color: #fff; }
-  .venn-chip i { color: var(--global-theme-color); font-size: 0.75rem; }
+  .venn-chip i { color: var(--global-theme-color); font-size: var(--rs-xs); }
 
   /* Panel responsive */
   @media (max-width: 900px) {
@@ -249,7 +264,7 @@ nav_order: 1
   }
   .research-modal .modal-header .modal-title {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: var(--rs-lg);
   }
   .research-modal .modal-body {
     padding: 1.5rem;
@@ -263,13 +278,13 @@ nav_order: 1
     background: var(--global-code-bg-color);
     border-radius: 8px;
     color: var(--global-text-color-light);
-    font-size: 0.82rem;
+    font-size: var(--rs-xs);
     font-family: monospace;
     border: 1px dashed var(--global-divider-color);
   }
   .research-modal .modal-desc {
     margin-top: 1rem;
-    font-size: 0.88rem;
+    font-size: var(--rs-sm);
     color: var(--global-text-color-light);
     line-height: 1.6;
   }
@@ -285,7 +300,7 @@ nav_order: 1
     border-radius: 8px;
     background: var(--global-code-bg-color);
     border: 1px solid var(--global-divider-color);
-    font-size: 0.85rem;
+    font-size: var(--rs-sm);
     color: var(--global-text-color);
     opacity: 0;
     max-height: 0;
@@ -314,7 +329,7 @@ nav_order: 1
   }
   .filter-indicator-text strong { font-weight: 700; }
   .filter-indicator-clear {
-    font-size: 0.78rem;
+    font-size: var(--rs-xs);
     font-weight: 600;
     color: var(--global-theme-color);
     cursor: pointer;
@@ -339,17 +354,17 @@ nav_order: 1
     margin-bottom: 0.3rem;
   }
   .related-work-section h3 {
-    font-size: 1.35rem;
+    font-size: var(--rs-xl);
     font-weight: 700;
     margin-bottom: 0;
   }
   .related-work-count {
-    font-size: 0.82rem;
+    font-size: var(--rs-xs);
     color: var(--global-text-color-light);
     font-weight: 500;
   }
   .related-work-section > p {
-    font-size: 0.88rem;
+    font-size: var(--rs-sm);
     color: var(--global-text-color-light);
     margin-bottom: 1.25rem;
   }
@@ -400,7 +415,7 @@ nav_order: 1
     justify-content: center;
     background: var(--global-code-bg-color);
     color: var(--global-text-color-light);
-    font-size: 0.78rem;
+    font-size: var(--rs-xs);
     font-family: monospace;
     border-bottom: 1px solid var(--global-divider-color);
   }
@@ -409,7 +424,7 @@ nav_order: 1
   }
   .related-work-badge {
     display: inline-block;
-    font-size: 0.65rem;
+    font-size: var(--rs-2xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -432,14 +447,14 @@ nav_order: 1
     background: rgba(52, 211, 153, 0.12);
   }
   .related-work-title {
-    font-size: 0.92rem;
+    font-size: var(--rs-sm);
     font-weight: 600;
     line-height: 1.35;
     color: var(--global-text-color);
     margin: 0;
   }
   .related-work-pillar {
-    font-size: 0.72rem;
+    font-size: var(--rs-xs);
     color: var(--global-text-color-light);
     margin-top: 0.3rem;
   }
@@ -459,7 +474,7 @@ nav_order: 1
     z-index: 2;
   }
   .rw-tag {
-    font-size: 0.6rem;
+    font-size: var(--rs-2xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -477,7 +492,7 @@ nav_order: 1
     font-weight: 600;
     text-transform: none;
     letter-spacing: 0;
-    font-size: 0.58rem;
+    font-size: var(--rs-2xs);
   }
   [data-pillars="perception"] .rw-tag-pillar { background: var(--venn-perception); }
   [data-pillars="coordination"] .rw-tag-pillar { background: var(--venn-coordination); }
@@ -512,9 +527,9 @@ nav_order: 1
     <!-- SVG on the right -->
     <div class="venn-svg-wrap">
       <svg class="venn-svg" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg">
-        <circle class="venn-circle perception" data-pillar="perception" cx="220" cy="200" r="165" fill-opacity="0.13" stroke-width="2.5" />
-        <circle class="venn-circle coordination" data-pillar="coordination" cx="380" cy="200" r="165" fill-opacity="0.13" stroke-width="2.5" />
-        <circle class="venn-circle edge" data-pillar="edge" cx="300" cy="350" r="165" fill-opacity="0.13" stroke-width="2.5" />
+        <circle class="venn-circle perception" data-pillar="perception" cx="220" cy="200" r="165" fill-opacity="0.18" stroke-width="3" />
+        <circle class="venn-circle coordination" data-pillar="coordination" cx="380" cy="200" r="165" fill-opacity="0.18" stroke-width="3" />
+        <circle class="venn-circle edge" data-pillar="edge" cx="300" cy="350" r="165" fill-opacity="0.18" stroke-width="3" />
 
         <text class="venn-label-sub" text-anchor="middle" x="155" y="138">PILLAR 01</text>
         <text class="venn-label" text-anchor="middle" x="155" y="158">Perception</text>
@@ -535,6 +550,12 @@ nav_order: 1
 
   </div>
 </div>
+
+{% comment %}
+Related Work: hidden until the cards point at real publications and
+projects. Unwrap this comment to bring the section back.
+{% endcomment %}
+{% comment %}
 
 <!-- ===== Related Work ===== -->
 <div class="related-work-section" id="related-work-section">
@@ -575,6 +596,8 @@ nav_order: 1
 
   </div>
 </div>
+
+{% endcomment %}
 
 <!-- Modals container -->
 <div id="research-modals"></div>
@@ -659,6 +682,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var isLocked = false; // locked = user clicked a circle
 
   function updateRelatedWork(pillarKey, areaSlug) {
+    // The Related Work section is commented out, so its controls are absent.
+    if (!rwCount) return;
     var visible = 0;
     relatedCards.forEach(function(card) {
       var matchesPillar = !pillarKey || card.dataset.pillars === pillarKey;
@@ -676,6 +701,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function showFilterBar(pillarKey, areaSlug, areaName) {
+    if (!filterIndicator) return;
     var data = pillars[pillarKey];
     filterDot.style.background = pillarColors[pillarKey];
     if (areaSlug && areaName) {
@@ -688,6 +714,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function hideFilterBar() {
+    if (!filterIndicator) return;
     filterIndicator.classList.remove('active');
     rwSubtitle.style.display = '';
   }
@@ -742,7 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Scroll to related work
-        relatedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (relatedSection) relatedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
@@ -753,7 +780,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll to related work if this was a click (locked)
     if (opts.scrollToWork) {
       setTimeout(function() {
-        relatedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (relatedSection) relatedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 150);
     }
   }
@@ -825,15 +852,17 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Clear filter button
-  filterClear.addEventListener('click', function(e) {
-    e.preventDefault();
-    resetAll();
-    document.getElementById('venn-wrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
+  if (filterClear) {
+    filterClear.addEventListener('click', function(e) {
+      e.preventDefault();
+      resetAll();
+      document.getElementById('venn-wrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
 
   // Click outside Venn wrapper on mobile → reset
   document.addEventListener('click', function(e) {
-    if (isLocked && !document.getElementById('venn-wrapper').contains(e.target) && !relatedSection.contains(e.target) && !e.target.closest('.modal')) {
+    if (isLocked && !document.getElementById('venn-wrapper').contains(e.target) && !(relatedSection && relatedSection.contains(e.target)) && !e.target.closest('.modal')) {
       resetAll();
     }
   });
