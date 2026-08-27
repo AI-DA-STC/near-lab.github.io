@@ -72,13 +72,19 @@
       .near-hero-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.48);
+        /* Weighted toward the text side so the copy has a consistently dark
+           backdrop whatever frame the video is on, while the footage stays
+           visible on the right. */
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.62) 45%, rgba(0, 0, 0, 0.42) 100%);
         z-index: 1;
       }
       .near-hero-content {
         position: relative;
         z-index: 2;
-        padding: 6rem 0 5rem;
+        /* This element also carries .container, so the side values must not be
+           zero — that dropped the container's own gutter and let the copy run
+           into the screen edge below ~930px. */
+        padding: 6rem 1.5rem 5rem;
         /* Ensure text renders clearly over video */
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
       }
@@ -88,13 +94,16 @@
         line-height: 1.08;
         letter-spacing: -0.03em;
         margin-bottom: 1.5rem;
-        color: var(--global-theme-color-on-dark);
+        /* White, not the accent: the backdrop is video, so a mid-tone colour
+           cannot hold contrast across every frame. */
+        color: #fff;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
         opacity: 0;
         animation: nearFadeInUp 0.7s ease forwards 0.35s;
       }
       .near-hero-subtitle {
         font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.88);
         max-width: 560px;
         line-height: 1.65;
         margin-bottom: 2.75rem;
