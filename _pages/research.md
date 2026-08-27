@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Research
+title: research
 permalink: /research/
 description: Robust Physical AI for autonomous robotic systems operating in real-world, resource-constrained environments.
 nav: true

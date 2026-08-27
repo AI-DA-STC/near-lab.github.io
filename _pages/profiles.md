@@ -13,7 +13,7 @@ profiles:
     image_circular: false
     more_info: >
       <p><strong>William Teo</strong></p>
-      <p>Head of Team NEAR@AI.DA-STC</p>
+      <p>Head of Team NEAR@AI.R STC</p>
       <div class="social-icons">
         <a href="https://www.william-teo.com" title="Website"><i class="fa-solid fa-globe"></i></a>
         <a href="https://scholar.google.com/citations?user=kgn0kGkAAAAJ&hl=en" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
@@ -28,7 +28,6 @@ profiles:
       <p><strong>Dibyendu Roy</strong></p>
       <p>Principal AI Engineer</p>
       <div class="social-icons">
-        <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
         <a href="https://scholar.google.com/citations?user=7wXXB3AAAAAJ&hl=en&oi=sra" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
         <a href="https://www.linkedin.com/in/dibyendu-roy-phd-11bb6569/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
       </div>
@@ -41,8 +40,6 @@ profiles:
       <p><strong>Jiaying</strong></p>
       <p>Principal AI Engineer</p>
       <div class="social-icons">
-        <a href="#" title="Website"><i class="fa-solid fa-globe"></i></a>
-        <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
         <a href="https://www.linkedin.com/in/jiaying-chen-33bb6510b/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
       </div>
 
