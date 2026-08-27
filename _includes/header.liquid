@@ -1,4 +1,22 @@
 <header>
+  <style>
+    .navbar-logo {
+      width: auto;
+      display: block;
+    }
+    .navbar-logo-near {
+      height: 34px;
+    }
+    .navbar-logo-ste {
+      height: 24px;
+    }
+    /* Both logos are dark artwork on a transparent background, so they need to
+       be flipped to white to stay visible against the dark navbar. */
+    html[data-theme='dark'] .navbar-logo {
+      filter: brightness(0) invert(1);
+    }
+  </style>
+
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container" style="position: relative;">
@@ -8,17 +26,9 @@
         href="{{ '/' | relative_url }}"
         style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none; padding: 0; flex-shrink: 0;"
       >
-        <img
-          src="{{ '/assets/img/near_lab.png' | relative_url }}"
-          alt="NEAR Lab"
-          style="height: 34px; width: auto; display: block; mix-blend-mode: multiply;"
-        >
+        <img src="{{ '/assets/img/near_lab.png' | relative_url }}" alt="NEAR Lab" class="navbar-logo navbar-logo-near">
         <span style="width: 1px; height: 24px; background: rgba(128,128,128,0.25); display: block; flex-shrink: 0;"></span>
-        <img
-          src="{{ '/assets/img/st-engineering.png' | relative_url }}"
-          alt="ST Engineering"
-          style="height: 24px; width: auto; display: block; mix-blend-mode: multiply;"
-        >
+        <img src="{{ '/assets/img/st-engineering.png' | relative_url }}" alt="ST Engineering" class="navbar-logo navbar-logo-ste">
       </a>
 
       <!-- Lab name removed from navbar — moved to hero section -->
