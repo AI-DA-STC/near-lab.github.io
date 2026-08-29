@@ -80,10 +80,11 @@ profiles:
 .post article hr {
   clear: both;
 }
-/* Keep the bio in a single column beside the portrait. Without a block
+/* Keep the bio in a single column beside the floated portrait. Without a block
    formatting context it wraps around the float instead: list markers land on
    top of the photo, and any text longer than the image runs full width
-   underneath it, breaking the left edge. */
+   underneath it, breaking the left edge. The portrait only floats from 576px up
+   (`float-sm-*`), so below that this is simply a full-width block. */
 .profile-bio {
   display: flow-root;
 }
@@ -101,9 +102,20 @@ profiles:
 .profile-bio li {
   margin-bottom: 0.5rem;
 }
+/* A percentage tuned for the desktop column leaves a thumbnail on a phone, so
+   let the group photo use the full width below the profile breakpoint. */
+.team-photo {
+  width: 100%;
+  margin-bottom: 15px;
+}
+@media (min-width: 576px) {
+  .team-photo {
+    width: 60%;
+  }
+}
 </style>
 
 <div style="text-align: center; margin-bottom: 40px;">
-  <img src="{{ '/assets/img/team_near.jpg' | relative_url }}" alt="NEAR Lab team members" class="img-fluid rounded z-depth-1" style="max-width: 60%; margin-bottom: 15px;">
+  <img src="{{ '/assets/img/team_near.jpg' | relative_url }}" alt="NEAR Lab team members" class="img-fluid rounded z-depth-1 team-photo">
   <p style="color: #6c757d; font-style: italic;">Members of NEAR Lab at Seletar Digital Hub, Singapore</p>
 </div>

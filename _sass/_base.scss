@@ -229,6 +229,17 @@ ul.task-list input[type="checkbox"] {
       }
     }
   }
+
+  // The profiles layout floats the portrait only from this breakpoint up, where
+  // it is narrow enough to leave room for the bio beside it. Below it the
+  // portrait is a full-width block in normal flow and needs no gutter.
+  .profile.float-sm-right {
+    margin-left: 1rem;
+  }
+
+  .profile.float-sm-left {
+    margin-right: 1rem;
+  }
 }
 
 .post-description {
